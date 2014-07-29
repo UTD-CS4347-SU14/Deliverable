@@ -24,7 +24,8 @@ public class Main {
      */
     public enum view {
         StoreActivity, Inventory, GenreSearchResult, GenreSearch,
-        DeliveryResult, Delivery
+        DeliveryResult, Delivery, ArtistSearchResult, ArtistSearch,
+        AlbumnSearchResult, AlbumnSearch
     }
 
     /**
