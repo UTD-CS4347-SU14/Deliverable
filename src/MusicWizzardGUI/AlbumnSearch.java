@@ -176,8 +176,8 @@ public class AlbumnSearch extends javax.swing.JFrame {
         String userInput = jTextField2.getText();
         // @todo - Add search query here
 
-        this.main.hideView(Main.view.AlbumSearch);
-        this.main.showView(Main.view.AlbumSearchResult);
+        this.main.hideView(Main.view.AlbumnSearch);
+        this.main.showView(Main.view.AlbumnSearchResult);
     }//GEN-LAST:event_button1ActionPerformed
 
     /**

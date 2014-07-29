@@ -18,6 +18,14 @@ public class Main {
     public StoreActivity storeActivity;
     public Inventory inventory;
     public GenreSearchResult genreSearchResult;
+    
+    public GenreSearch genreSearch;
+    public DeliveryResult deliveryResult;
+    public Delivery delivery;
+    public ArtistSearchResult artistSearchResult;
+    public ArtistSearch artistSearch;
+    public AlbumnSearchResult albumnSearchResult;
+    public AlbumnSearch albumnSearch;
 
     /**
      * The enumerate values for each view related to this view handler.
@@ -35,6 +43,13 @@ public class Main {
         this.storeActivity = new StoreActivity(this);
         this.inventory = new Inventory(this);
         this.genreSearchResult = new GenreSearchResult(this);
+        this.genreSearch = new GenreSearch(this);
+        this.deliveryResult = new DeliveryResult(this);
+        this.delivery = new Delivery(this);
+        this.artistSearchResult = new ArtistSearchResult(this);
+        this.artistSearch = new ArtistSearch(this);
+        this.albumnSearchResult = new AlbumnSearchResult(this);
+        this.albumnSearch = new AlbumnSearch(this);
     }
 
     /**
@@ -53,6 +68,25 @@ public class Main {
             case GenreSearchResult:
                 this.genreSearchResult.setVisible(true);
                 break;
+            case GenreSearch:
+                this.genreSearch.setVisible(true);
+                break;
+            case DeliveryResult:
+                this.deliveryResult.setVisible(true);
+                break;
+            case Delivery:
+                this.delivery.setVisible(true);
+                break;
+            case ArtistSearchResult:
+                this.artistSearchResult.setVisible(true);
+                break;
+            case ArtistSearch:
+                this.artistSearch.setVisible(true);
+                break;
+            case AlbumnSearchResult:
+                this.albumnSearchResult.setVisible(true);
+            case AlbumnSearch:
+                this.artistSearch.setVisible(true);
         }
     }
 
@@ -72,6 +106,25 @@ public class Main {
             case GenreSearchResult:
                 this.genreSearchResult.setVisible(false);
                 break;
+            case GenreSearch:
+                this.genreSearch.setVisible(false);
+                break;
+            case DeliveryResult:
+                this.deliveryResult.setVisible(false);
+                break;
+            case Delivery:
+                this.delivery.setVisible(false);
+                break;
+            case ArtistSearchResult:
+                this.artistSearchResult.setVisible(false);
+                break;
+            case ArtistSearch:
+                this.artistSearch.setVisible(false);
+                break;
+            case AlbumnSearchResult:
+                this.albumnSearchResult.setVisible(false);
+            case AlbumnSearch:
+                this.artistSearch.setVisible(false);
         }
     }
 
