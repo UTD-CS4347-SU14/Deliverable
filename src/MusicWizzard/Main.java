@@ -38,7 +38,7 @@ public class Main {
 
     /**
      * Show the given view.
-     * 
+     *
      * @param v The view to show.
      */
     public void showView(view v) {
@@ -57,7 +57,7 @@ public class Main {
 
     /**
      * Hide the given view.
-     * 
+     *
      * @param v The view to hide.
      */
     public void hideView(view v) {
