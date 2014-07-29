@@ -175,8 +175,8 @@ public class GenreSearch extends javax.swing.JFrame {
 
     /**
      * Search button event action.
-     * 
-     * @param evt 
+     *
+     * @param evt
      */
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         String userInput = jTextField2.getText();
@@ -204,7 +204,7 @@ public class GenreSearch extends javax.swing.JFrame {
         this.main.hideView(Main.view.GenreSearch);
         this.main.showView(Main.view.StoreActivity);
     }//GEN-LAST:event_jButton4ActionPerformed
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
     private javax.swing.JButton jButton1;
