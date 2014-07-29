@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package MusicWizzard;
 
 import MusicWizzardGUI.*;
@@ -13,23 +12,24 @@ import MusicWizzardGUI.*;
  * @author zack
  */
 public class Main {
+
     public StoreActivity storeActivity;
     public Inventory inventory;
-    
+
     public enum view {
         StoreActivity, Inventory
     }
-    
+
     public Main() {
         this.storeActivity = new StoreActivity(this);
         this.storeActivity.setVisible(true);
-        
+
         this.inventory = new Inventory(this);
         this.inventory.setVisible(false);
     }
-    
+
     public void showView(view v) {
-        switch(v) {
+        switch (v) {
             case StoreActivity:
                 this.storeActivity.setVisible(true);
                 break;
@@ -38,9 +38,9 @@ public class Main {
                 break;
         }
     }
-    
+
     public void hideView(view v) {
-        switch(v) {
+        switch (v) {
             case StoreActivity:
                 this.storeActivity.setVisible(false);
                 break;
@@ -49,7 +49,7 @@ public class Main {
                 break;
         }
     }
-    
+
     public static void main(String[] args) {
         new Main();
     }
