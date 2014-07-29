@@ -15,7 +15,7 @@ package MusicWizzardGUI;
 import MusicWizzard.Main;
 
 public class GenreSearch extends javax.swing.JFrame {
-    public Main main;
+    private Main main;
 
     /**
      * Create a GenreSearch view.
@@ -24,7 +24,7 @@ public class GenreSearch extends javax.swing.JFrame {
      */
     public GenreSearch(Main main) {
         initComponents();
-        
+
         this.main = main;
         this.setVisible(false);
     }

@@ -165,10 +165,8 @@ public class StoreActivity extends javax.swing.JFrame {
      * @param evt
      */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-
-        //I belive this should open the new page showing the results displayed on that page
-        new Delivery();
+        this.main.hideView(Main.view.StoreActivity);
+        this.main.showView(Main.view.Delivery);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

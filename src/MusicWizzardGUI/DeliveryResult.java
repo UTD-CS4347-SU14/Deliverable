@@ -15,7 +15,7 @@ package MusicWizzardGUI;
 import MusicWizzard.Main;
 
 public class DeliveryResult extends javax.swing.JFrame {
-    public Main main;
+    private Main main;
 
     /**
      * Create a DeliveryResult view.
