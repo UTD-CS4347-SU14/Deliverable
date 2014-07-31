@@ -53,7 +53,7 @@ public class Inventory extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Main Menu");
+        jButton2.setText("Store Activity");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -125,7 +125,7 @@ public class Inventory extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-     * Main Menu button event action.
+     * Store Activity button event action.
      *
      * @param evt
      */

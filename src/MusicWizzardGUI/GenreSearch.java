@@ -202,7 +202,7 @@ public class GenreSearch extends javax.swing.JFrame {
      */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.main.hideView(Main.view.GenreSearch);
-        this.main.showView(Main.view.StoreActivity);
+        this.main.showView(Main.view.MainMenu);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -16,9 +16,18 @@ import MusicWizzardGUI.*;
 
 public class Main {
     public StoreActivity storeActivity;
+
+    public Sales sales;
+    public ReceiptLookUp receiptLookUp;
+    public ReceiptDisplay receiptDisplay;
+    public PaymentCredit paymentCredit;
+    public PaymentCheck paymentCheck;
+    public PaymentCash paymentCash;
+    public Payment payment;
+    public MainMenu mainMenu;
+
     public Inventory inventory;
     public GenreSearchResult genreSearchResult;
-    
     public GenreSearch genreSearch;
     public DeliveryResult deliveryResult;
     public Delivery delivery;
@@ -33,9 +42,10 @@ public class Main {
      * The enumerate values for each view related to this view handler.
      */
     public enum view {
-        StoreActivity, Inventory, GenreSearchResult, GenreSearch,
-        DeliveryResult, Delivery, ArtistSearchResult, ArtistSearch,
-        AlbumnSearchResult, AlbumnSearch
+        StoreActivity, Sales, ReceiptLookUp, ReceiptDisplay, PaymentCredit,
+        PaymentCheck, PaymentCash, Payment, MainMenu, Inventory,
+        GenreSearchResult, GenreSearch, DeliveryResult, Delivery,
+        ArtistSearchResult, ArtistSearch, AlbumnSearchResult, AlbumnSearch
     }
 
     /**
@@ -44,6 +54,16 @@ public class Main {
     public Main() {
         this.database = new Database();
         this.storeActivity = new StoreActivity(this);
+
+        this.sales = new Sales(this);
+        this.receiptLookUp = new ReceiptLookUp(this);
+        this.receiptDisplay = new ReceiptDisplay(this);
+        this.paymentCredit = new PaymentCredit(this);
+        this.paymentCheck = new PaymentCheck(this);
+        this.paymentCash = new PaymentCash(this);
+        this.payment = new Payment(this);
+        this.mainMenu = new MainMenu(this);
+
         this.inventory = new Inventory(this);
         this.genreSearchResult = new GenreSearchResult(this);
         this.genreSearch = new GenreSearch(this);
@@ -64,6 +84,30 @@ public class Main {
         switch (v) {
             case StoreActivity:
                 this.storeActivity.setVisible(true);
+                break;
+            case Sales:
+                this.sales.setVisible(true);
+                break;
+            case ReceiptLookUp:
+                this.receiptLookUp.setVisible(true);
+                break;
+            case ReceiptDisplay:
+                this.receiptDisplay.setVisible(true);
+                break;
+            case PaymentCredit:
+                this.paymentCredit.setVisible(true);
+                break;
+            case PaymentCheck:
+                this.paymentCheck.setVisible(true);
+                break;
+            case PaymentCash:
+                this.paymentCash.setVisible(true);
+                break;
+            case Payment:
+                this.payment.setVisible(true);
+                break;
+            case MainMenu:
+                this.mainMenu.setVisible(true);
                 break;
             case Inventory:
                 this.inventory.setVisible(true);
@@ -102,6 +146,30 @@ public class Main {
         switch (v) {
             case StoreActivity:
                 this.storeActivity.setVisible(false);
+                break;
+            case Sales:
+                this.sales.setVisible(false);
+                break;
+            case ReceiptLookUp:
+                this.receiptLookUp.setVisible(false);
+                break;
+            case ReceiptDisplay:
+                this.receiptDisplay.setVisible(false);
+                break;
+            case PaymentCredit:
+                this.paymentCredit.setVisible(false);
+                break;
+            case PaymentCheck:
+                this.paymentCheck.setVisible(false);
+                break;
+            case PaymentCash:
+                this.paymentCash.setVisible(false);
+                break;
+            case Payment:
+                this.payment.setVisible(false);
+                break;
+            case MainMenu:
+                this.mainMenu.setVisible(false);
                 break;
             case Inventory:
                 this.inventory.setVisible(false);

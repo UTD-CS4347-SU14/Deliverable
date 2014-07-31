@@ -87,7 +87,7 @@ public class Delivery extends javax.swing.JFrame {
             }
         });
 
-        mainMenuButton.setText("Main Menu");
+        mainMenuButton.setText("Store Activity");
         mainMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mainMenuButtonActionPerformed(evt);
@@ -242,7 +242,7 @@ public class Delivery extends javax.swing.JFrame {
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
-     * Main Menu button event action.
+     * StoreActivity button event action.
      *
      * @param evt
      */
