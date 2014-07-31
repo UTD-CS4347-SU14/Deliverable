@@ -146,7 +146,10 @@ public class Inventory extends javax.swing.JFrame {
         this.main.hideView(Main.view.Inventory);
         this.main.showView(Main.view.StoreActivity);
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    /**
+     * Update button event action.
+     * @param evt 
+     */
     private void updateInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateInventoryActionPerformed
         // TODO add your handling code here:
         this.main.hideView(Main.view.Inventory);

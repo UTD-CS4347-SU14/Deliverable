@@ -49,6 +49,7 @@ public class UpdateInventory extends javax.swing.JFrame {
         artistIDText = new javax.swing.JTextField();
         updateButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +86,13 @@ public class UpdateInventory extends javax.swing.JFrame {
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
+            }
+        });
+
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
             }
         });
 
@@ -125,6 +133,8 @@ public class UpdateInventory extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(deleteButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(updateButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(backButton))))
@@ -157,7 +167,8 @@ public class UpdateInventory extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateButton)
-                    .addComponent(backButton)))
+                    .addComponent(backButton)
+                    .addComponent(deleteButton)))
         );
 
         pack();
@@ -205,15 +216,56 @@ public class UpdateInventory extends javax.swing.JFrame {
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
         this.main.hideView(Main.view.UpdateInventory);
         this.main.showView(Main.view.Inventory);
     }//GEN-LAST:event_backButtonActionPerformed
+    /**
+     * Delete button action event.
+     * @param evt 
+     */
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        
+        int itemID = Integer.valueOf(itemIDText.getText());
+        String itemName = itemNameText.getText();
+        double itemPrice = Double.valueOf(itemPriceText.getText());
+        int itemStock = Integer.valueOf(itemStockText.getText());
+        int artistID = Integer.valueOf(artistIDText.getText());
+        String query = "DELETE from inventory where ItemID="+itemID+"";
+        this.main.database.update(query);
+        
+        DefaultTableModel model = (DefaultTableModel) this.main.inventory.jTable1.getModel();
+        while (model.getRowCount() > 0) {
+            for (int a = model.getRowCount()-1; a >= 0; a--) {
+                model.removeRow(a);
+            }
+        }
+        
+        try {
+//            Database test = new Database();
+            
+            query = "SELECT * FROM INVENTORY";
+            System.out.println("calling select with query :: " + query);
+            ResultSet rSet = this.main.database.select(query);
+
+            while(rSet.next()) {
+                model.addRow(new Object[]{rSet.getInt("ItemID"), 
+                    rSet.getString("ItemName"), rSet.getDouble("ItemPrice"),
+                    rSet.getInt("ItemStock"),
+                    rSet.getInt("ArtistID")});
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        this.main.hideView(Main.view.UpdateInventory);
+        this.main.showView(Main.view.Inventory);
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel artistIDLabel;
     private javax.swing.JTextField artistIDText;
     private javax.swing.JButton backButton;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JTextField itemIDText;
     private javax.swing.JLabel itemNameLabel;
     private javax.swing.JTextField itemNameText;
