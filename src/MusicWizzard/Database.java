@@ -97,7 +97,6 @@ public class Database {
      */
     public ResultSet select(String query) {
         try {
-            System.out.println("query = " + query);
             this.statement = this.connection.createStatement();
             this.rSet = this.statement.executeQuery(query);
         } catch (SQLException ex) {
