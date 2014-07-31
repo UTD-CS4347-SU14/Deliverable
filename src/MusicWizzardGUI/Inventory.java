@@ -27,6 +27,8 @@ public class Inventory extends javax.swing.JFrame {
 
         this.main = main;
         this.setVisible(false);
+        this.jTable1.setCellSelectionEnabled(false);
+        this.jTable1.setRowSelectionAllowed(true);
     }
 
     /**
