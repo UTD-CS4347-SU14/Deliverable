@@ -22,7 +22,7 @@ public class PaymentCredit extends javax.swing.JFrame {
      *
      * @param main The reference to our view controller.
      */
-    public PaymentCredit() {
+    public PaymentCredit(Main main) {
         initComponents();
 
         this.main = main;

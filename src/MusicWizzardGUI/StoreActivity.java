@@ -26,7 +26,7 @@ public class StoreActivity extends javax.swing.JFrame {
         initComponents();
 
         this.main = main;
-        this.setVisible(true);
+        this.setVisible(false);
     }
 
     /**
@@ -185,7 +185,7 @@ public class StoreActivity extends javax.swing.JFrame {
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.main.hideView(Main.view.StoreActivity);
-        this.main.showView(Main.view.Inventory);
+        this.main.showView(Main.view.MainMenu);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
