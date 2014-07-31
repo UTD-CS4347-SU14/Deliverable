@@ -197,7 +197,7 @@ public class ArtistSearch extends javax.swing.JFrame {
      */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.main.hideView(Main.view.ArtistSearch);
-        this.main.showView(Main.view.StoreActivity);
+        this.main.showView(Main.view.MainMenu);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
