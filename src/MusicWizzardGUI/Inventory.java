@@ -45,6 +45,7 @@ public class Inventory extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        updateInventory = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,12 +82,21 @@ public class Inventory extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        updateInventory.setText("Update");
+        updateInventory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateInventoryActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(updateInventory)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(26, 26, 26)
                 .addComponent(jButton1)
@@ -110,7 +120,8 @@ public class Inventory extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(updateInventory))
                 .addContainerGap())
         );
 
@@ -135,6 +146,15 @@ public class Inventory extends javax.swing.JFrame {
         this.main.hideView(Main.view.Inventory);
         this.main.showView(Main.view.StoreActivity);
     }//GEN-LAST:event_jButton2ActionPerformed
+    /**
+     * Update button event action.
+     * @param evt 
+     */
+    private void updateInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateInventoryActionPerformed
+        // TODO add your handling code here:
+        this.main.hideView(Main.view.Inventory);
+        this.main.showView(Main.view.UpdateInventory);
+    }//GEN-LAST:event_updateInventoryActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -142,5 +162,6 @@ public class Inventory extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     protected javax.swing.JTable jTable1;
+    private javax.swing.JButton updateInventory;
     // End of variables declaration//GEN-END:variables
 }

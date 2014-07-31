@@ -196,17 +196,22 @@ public class StoreActivity extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.main.hideView(Main.view.StoreActivity);
         this.main.showView(Main.view.Inventory);
+                    
         
-                
+        DefaultTableModel model = (DefaultTableModel) this.main.inventory.jTable1.getModel();
+        while (model.getRowCount() > 0) {
+            for (int a = model.getRowCount()-1; a >= 0; a--) {
+                model.removeRow(a);
+            }
+        }
+        
         try {
 //            Database test = new Database();
             
             String query = "SELECT * FROM INVENTORY";
             System.out.println("calling select with query :: " + query);
             ResultSet rSet = this.main.database.select(query);
-            DefaultTableModel model = 
-                    (DefaultTableModel) this.main.inventory.jTable1.getModel();
-            
+
             while(rSet.next()) {
                 System.out.println("test rset get in :: " + rSet.getInt("ItemID"));
                 model.addRow(new Object[]{rSet.getInt("ItemID"), 
@@ -214,7 +219,6 @@ public class StoreActivity extends javax.swing.JFrame {
                     rSet.getInt("ItemStock"),
                     rSet.getInt("ArtistID")});
             }
-            
         } catch (SQLException e) {
             e.printStackTrace();
         }

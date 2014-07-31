@@ -37,7 +37,7 @@ public class Main {
     public AlbumnSearch albumnSearch;
 
     public Database database;
-    
+    public UpdateInventory updateInventory;
     /**
      * The enumerate values for each view related to this view handler.
      */
@@ -45,7 +45,8 @@ public class Main {
         StoreActivity, Sales, ReceiptLookUp, ReceiptDisplay, PaymentCredit,
         PaymentCheck, PaymentCash, Payment, MainMenu, Inventory,
         GenreSearchResult, GenreSearch, DeliveryResult, Delivery,
-        ArtistSearchResult, ArtistSearch, AlbumnSearchResult, AlbumnSearch
+        ArtistSearchResult, ArtistSearch, AlbumnSearchResult, AlbumnSearch,
+        UpdateInventory
     }
 
     /**
@@ -73,6 +74,7 @@ public class Main {
         this.artistSearch = new ArtistSearch(this);
         this.albumnSearchResult = new AlbumnSearchResult(this);
         this.albumnSearch = new AlbumnSearch(this);
+        this.updateInventory = new UpdateInventory(this);
     }
 
     /**
@@ -132,8 +134,13 @@ public class Main {
                 break;
             case AlbumnSearchResult:
                 this.albumnSearchResult.setVisible(true);
+                break;
             case AlbumnSearch:
                 this.artistSearch.setVisible(true);
+                break;
+            case UpdateInventory:
+                this.updateInventory.setVisible(true);
+                break;
         }
     }
 
@@ -194,8 +201,13 @@ public class Main {
                 break;
             case AlbumnSearchResult:
                 this.albumnSearchResult.setVisible(false);
+                break;
             case AlbumnSearch:
                 this.artistSearch.setVisible(false);
+                break;
+            case UpdateInventory:
+                this.updateInventory.setVisible(false);
+                break;
         }
     }
 
