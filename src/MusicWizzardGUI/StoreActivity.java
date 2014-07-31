@@ -12,7 +12,13 @@
  */
 package MusicWizzardGUI;
 
+import MusicWizzard.Database;
 import MusicWizzard.Main;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 public class StoreActivity extends javax.swing.JFrame {
     private Main main;
@@ -190,6 +196,28 @@ public class StoreActivity extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.main.hideView(Main.view.StoreActivity);
         this.main.showView(Main.view.Inventory);
+        
+                
+        try {
+//            Database test = new Database();
+            
+            String query = "SELECT * FROM INVENTORY";
+            System.out.println("calling select with query :: " + query);
+            ResultSet rSet = this.main.database.select(query);
+            DefaultTableModel model = 
+                    (DefaultTableModel) this.main.inventory.jTable1.getModel();
+            
+            while(rSet.next()) {
+                System.out.println("test rset get in :: " + rSet.getInt("ItemID"));
+                model.addRow(new Object[]{rSet.getInt("ItemID"), 
+                    rSet.getString("ItemName"), rSet.getDouble("ItemPrice"),
+                    rSet.getInt("ItemStock"),
+                    rSet.getInt("ArtistID")});
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

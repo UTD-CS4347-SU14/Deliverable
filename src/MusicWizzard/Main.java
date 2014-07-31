@@ -36,6 +36,8 @@ public class Main {
     public AlbumnSearchResult albumnSearchResult;
     public AlbumnSearch albumnSearch;
 
+    public Database database;
+    
     /**
      * The enumerate values for each view related to this view handler.
      */
@@ -50,6 +52,7 @@ public class Main {
      * Create our view handler with the default settings.
      */
     public Main() {
+        this.database = new Database();
         this.storeActivity = new StoreActivity(this);
 
         this.sales = new Sales(this);
